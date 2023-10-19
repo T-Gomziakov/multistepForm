@@ -15,7 +15,6 @@
 
     <section class="stepCounter">
       <section class="stepText">
-
         <div class="stepContainer">
           <div class="stepOneNumber">
             <p>1</p>
@@ -29,7 +28,6 @@
             </p>
           </div>
         </div>
-
         <div class="stepContainer">
           <div class="stepTwoNumber">
             <p>2</p>
@@ -75,7 +73,7 @@
       </section>
     </section>
 
-    <section class="formContainer">
+    <section id="firstForm" class="formContainer">
       <div class="formHolder">
         <h1>
           Personal info
@@ -85,7 +83,7 @@
           Please provide your name, email address, and phone number
         </h2>
     
-        <form name="personalInfoForm" id="personalInfoForm" action="post">
+        <form name="personalInfoForm" id="personalInfoForm" action="post" >
           <label for="fullName" id="fullNameLabel">Name</label>
           <input type="text" id="fullNameInput" name="fullName"
           placeholder="e.g. Stephen King">
@@ -105,6 +103,185 @@
       </div>
     </section>
 
-  </main>
+    <section id="secondForm" class="formContainer hidden">
+      <div class="formHolder">
+        <h1>
+          Select Your Plan
+        </h1>
+
+        <h2>
+          You have the option of monthly or yearly billing.
+        </h2>
+
+        <form id="planSelectionForm" class="buttonSelection" action="post">
+            <div id="selectionsBox">
+              <label><input type="checkbox" name="planSelection" value="arcade"><span>
+                <img src="assets\images\icon-arcade.svg">
+                <p class="planTitle">Arcade</p>
+                <p class="planDescription">$9/mo</p>
+              </span></label>
+
+              <label><input type="checkbox" name="planSelection" value="advanced"><span>
+                <img src="assets\images\icon-advanced.svg">
+                <p class="planTitle">Advanced</p>
+                <p class="planDescription">$12/mo</p>
+              </span></label>
+
+              <label><input type="checkbox" name="planSelection" value="pro"><span>
+                <img src="assets\images\icon-pro.svg">
+                <p class="planTitle">Pro</p>
+                <p class="planDescription">$15/mo</p>
+              </span></label>
+            </div>
+
+            <div id="paymentTypeContainer">
+                <p class="active">Monthly</p>
+                <label><input type="checkbox" name="planSelection" value="yearly"></label>
+                <p class="inactive">Yearly</p>
+            </div>
+
+            <div class="progressionButtons">
+              <button type="button" class="backButton inactive">Go Back</button>
+              <button type="submit" class="nextButton">Next Step</button>
+            </div>
+        </form>
+
+      </div>
+      
+    </section>
+
+    <section id="thirdForm" class="formContainer hidden">
+      <div class="formHolder">
+        <h1>
+          Pick add-ons
+        </h1>
+
+        <h2>
+          Add-ons help enchance your gaming experience.
+        </h2>
+
+        <form id="addonSelectionForm" class="buttonSelection" action="\" method="post">
+            <div id="addonBox">
+              <label><input type="checkbox" name="addonSelectionService" value="onlineService"><span>
+                
+                <div class="addonSelection">
+                  <p class="planTitle">Online service</p>
+                  <p class="planDescription">Access to multiplayer games</p>
+                </div>
+                <p class="addonPrice">
+                  +1$/mo
+                </p>
+              </span></label>
+
+              <label><input type="checkbox" name="addonSelectionStorage" value="largerStorage"><span>
+                
+                <div class="addonSelection">
+                  <p class="planTitle">Larger storage</p>
+                  <p class="planDescription">Extra 1TB of cloud save</p>
+                </div>
+                <p class="addonPrice">
+                  +2$/mo
+                </p>
+              </span></label>
+
+              <label><input type="checkbox" name="addonSelectionProfile" value="customProfile"><span>
+                <div class="addonSelection">
+                  <p class="planTitle">Customizable Profile</p>
+                  <p class="planDescription">Custom theme on your profile</p>
+                </div>
+                <p class="addonPrice">
+                  +2$/mo
+                </p>
+              </span></label>
+            </div>
+
+            <div class="progressionButtons">
+              <button type="button" class="backButton inactive">Go Back</button>
+              <button type="submit" class="nextButton">Next Step</button>
+            </div>
+        </form>
+
+      </div>
+      
+    </section>
+
+    <section id="fourthForm" class="formContainer hidden">
+      <div class="formHolder">
+        <h1>
+          Finishing up
+        </h1>
+
+        <h2>
+          Double-check everything looks OK before confirming.
+        </h2>
+
+        <div class="summary">
+          <div class="monthlyYearlyPlan">
+            <div class="planDescription">
+              <p class="planDescriptionText" id="planTime">Arcade (Monthly)</p>
+              <button type="button" id="changeButton">Change</button>
+            </div>
+            <div class="monthlyPrice" id="planPrice">
+              $9/mo
+            </div>
+          </div>
+
+          <div class="online finishingOutline">
+            <div class="planDescription">
+              <p class="outlineTitle">Online service</p>
+            </div>
+            <div class="outlinePrice" id="onlinePrice">
+              +$1/mo
+            </div>
+          </div>
+
+          <div class="storage finishingOutline">
+            <div class="planDescription">
+              <p class="outlineTitle">Larger storage</p>
+            </div>
+            <div class="outlinePrice" id="storagePrice">
+              +$2/mo
+            </div>
+          </div>
+
+          <div class="custom finishingOutline">
+            <div class="planDescription">
+              <p class="outlineTitle">Customizable profile</p>
+            </div>
+            <div class="outlinePrice" id="customPrice">
+              +$2/mo
+            </div>
+          </div>
+
+          
+        </div>
+
+        <div class="total">
+          <p id="totalTime">Total (per month)</p>
+          <p id="totalCost">+12$/mo</p>
+        </div>
+        
+
+            <div class="progressionButtons">
+              <button type="button" class="backButton inactive">Go Back</button>
+              <button type="submit" class="nextButton">Confirm</button>
+            </div>
+
+      </div>
+      
+    </section>
+
+    <section id="fifthPage" class="formContainer hidden">
+      <div class="formHolder">
+        <div class="thankYou">
+          <img src="assets/images/icon-thank-you.svg">
+          <h1>Thank you!</h1>
+          <p>Thanks for confirming your subscriptions! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com</p>
+        </div>
+      </div>
+      
+    </section>
+
+  </main> 
 </body>
 </html>

@@ -123,6 +123,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+}
+
+.hidden {
+  display:none !important;
 }
 
 .primaryContainer{
@@ -132,7 +137,8 @@ body {
 
     width: 60rem;
     height: 40rem;
-    
+
+    max-height: 100%;
     max-width: 100%;
     margin: 2rem;
 
@@ -143,7 +149,7 @@ body {
   display: flex;
   flex: 1;
   margin: 1rem;
-
+  
   background: url("assets/images/bg-sidebar-desktop.svg") no-repeat center;
 }
 
@@ -191,6 +197,8 @@ body {
   color: var(--clr-secondary-alabaster);
 }
 
+
+
 .currentNumber {
   color: var(--clr-primary-marineBlue);
   background-color: var(--clr-primary-pastelBlue);
@@ -219,11 +227,11 @@ body {
 
 .formContainer {
   display: flex;
-
   flex: 2;
 }
 
 .formHolder {
+  flex: 1;
   margin: 5% 10%;
   display: flex;
   flex-direction: column;
@@ -232,6 +240,7 @@ body {
 h1 {
   font-family: var(--ff-500);
   font-size: 1.9rem;
+  color: var(--clr-primary-marineBlue);
 }
 
 h2{
@@ -315,4 +324,307 @@ outline: none;
 .optionButtons button{
   flex: 1;
   margin: 2rem;
+}
+
+#selectionsBox {
+  display: flex;
+}
+#selectionsBox label {
+  flex: 1;
+  margin: 0 1rem 1rem 0;
+}
+
+#selectionsBox label span {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 6rem;
+
+  border-radius: 0.5rem;
+  border: 0.1rem solid var(--clr-secondary-lightGray);
+}
+
+#selectionsBox label span img {
+  width: 50px;
+  margin: 1rem;
+}
+
+.planTitle {
+  margin-left: 10%;
+
+  font-family: var(--ff-500);
+  color: var(--clr-primary-marineBlue);
+}
+
+.planDescription {
+  margin-bottom: 1.5rem;
+  margin-left: 1rem;
+  line-height: 0;
+
+  font-family: var(--ff-400);
+  color: var(--clr-secondary-coolGray);
+}
+
+#selectionsBox input[type="checkbox"]{
+  display: none;
+}
+
+#selectionsBox input[type="checkbox"]:checked + span{
+  background-color: gold;
+  color: black;
+}
+
+.buttonSelection {
+  display:flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+#paymentTypeContainer {
+  display:flex;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: var(--clr-secondary-magnolia);
+  border-radius: 1rem;
+}
+
+#paymentTypeContainer p {
+  margin: auto 1rem;
+  font-family: var(--ff-500);
+  font-size: 1rem;
+}
+
+.active {
+  color: var(--clr-primary-marineBlue);
+}
+.inactive {
+  color: var(--clr-secondary-coolGray);
+}
+
+#paymentTypeContainer label {
+  margin-top: auto;
+  display: flex;
+}
+
+#paymentTypeContainer input[type="checkbox"]{
+  -webkit-appearance: none;
+  position:relative;
+  margin: 0;
+  width: 40px;
+  height: 20px;
+  border-radius: 25px;
+  background-color: var(--clr-primary-marineBlue);
+  transition: background .3s;
+  outline: none;
+  cursor: pointer;
+}
+
+#paymentTypeContainer input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top:50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  height: 0.9rem;
+  width: 0.9rem;
+  background-color: var(--clr-secondary-white);
+  transition: left .3s;
+}
+#paymentTypeContainer input[type="checkbox"]:checked::after{
+  left: 70%;
+}
+
+.progressionButtons {
+  display: flex;
+  flex: 0;
+  margin-top: auto;
+}
+.progressionButtons button[type="button"] {
+  background: none;
+  border: none;
+  font-family: var(--ff-500);
+}
+.progressionButtons button[type="submit"] {
+  background: var(--clr-primary-marineBlue);
+  color: var(--clr-secondary-white);
+  border: none;
+  border-radius: 0.5rem;
+  font-family: var(--ff-500);
+
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+.progressionButtons button[type="submit"]:hover {
+  background-color: hsl(214, 72%, 32%);
+}
+
+
+#addonBox input[type="checkbox"] {
+  margin: 0;
+  position: absolute;
+  align-self: center;
+  left: 2rem;
+}
+
+#addonBox input[type="checkbox"]:checked + span{
+  border: 0.1rem solid var(--clr-primary-purplishBlue);
+  border-radius: 0.5rem;
+}
+
+#addonBox label{
+  display: flex;
+  flex-direction: row;
+  background-color: var(--clr-secondary-magnolia);
+  margin: 1rem;
+  border: 0.1rem solid var(--clr-secondary-lightGray);
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+#addonBox label span {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+#addonBox label span div {
+  margin-left: 5rem;
+}
+
+#addonBox label span div p {
+  margin-left: 0;
+}
+
+#addonBox label span div .planDescription {
+  text-align: start;
+  line-height: 1;
+  margin-top: 0.5rem;
+}
+
+#addonBox label span .addonPrice {
+  margin: auto 2rem auto auto;
+  font-family: var(--ff-400);
+  font-size: 1rem;
+  color: var(--clr-primary-purplishBlue);
+}
+
+.summary {
+  background-color: var(--clr-secondary-magnolia);
+  padding-bottom: 1rem;
+}
+
+.planDescription {
+  line-height: 1.5;
+  font-family: var(--ff-500);
+  color:var(--clr-primary-marineBlue);
+}
+
+.monthlyYearlyPlan {
+  display: flex;
+  flex-direction: row;
+
+  margin: 0rem 1rem;
+  border-bottom: 0.1rem solid var(--clr-secondary-lightGray);
+}
+
+.monthlyPrice {
+  margin: auto 1rem auto auto;
+  font-family: var(--ff-500);
+  color: var(--clr-primary-marineBlue);
+}
+
+
+#changeButton {
+  background: none;
+  border: none;
+  text-decoration: 0.1rem underline;
+  color: var(--clr-secondary-coolGray);
+  margin: 0;
+  padding: 0;
+}
+
+#changeButton:hover {
+  cursor:pointer;
+  color: var(--clr-primary-purplishBlue);
+}
+
+.finishingOutline {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.finishingOutline .planDescription {
+  margin: 0;
+}
+
+.outlineTitle {
+  font-family: var(--ff-400);
+  color: var(--clr-secondary-coolGray);
+  margin-left: 1rem;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.outlinePrice {
+  margin:auto 2rem auto auto;
+  font-family: var(--ff-400);
+  color: var(--clr-primary-marineBlue);
+  font-size: 1rem;
+}
+
+.total {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 1rem;
+
+}
+
+#totalTime {
+  font-family: var(--ff-400);
+  color: var(--clr-secondary-coolGray);
+  margin: auto 0;
+}
+
+#totalCost {
+  margin: auto 1rem 0 auto;
+  font-family: var(--ff-700);
+  font-size: 1.2rem;
+  color: var(--clr-primary-purplishBlue);
+}
+
+.thankYou {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.thankYou h1 {
+  margin: 2rem 0 1rem 0;
+}
+
+.thankYou p {
+  margin: 0;
+  max-width: 30rem;
+  text-wrap:wrap;
+  text-align: center;
+  font-family: var(--ff-400);
+  color: var(--clr-secondary-coolGray);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#fourthForm .formHolder .progressionButtons .nextButton:hover {
+  background-color: var(--clr-primary-purplishBlue);
 }
